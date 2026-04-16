@@ -146,14 +146,13 @@ De applicatie draait op: [http://127.0.0.1:5000](http://127.0.0.1:5000)
 
 ---
 
-## 🔑 Testgegevens
+## 🔑 Testgegevens voor becijfering
 
 **Admin account**
 
 * E-mail: `admin@voetbalbase.nl`
 * Wachtwoord: `Admin123!`
 
-Je kunt ook zelf een account aanmaken.
 
 ---
 
