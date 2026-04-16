@@ -1,272 +1,206 @@
 # ⚽ VoetbalBase
 
-Een voetbalbase voor beheer van spelers, clubs en contracten. Registreer met je email, log in, en beheer je voetbaldata!
+Een voetbalbase voor beheer van spelers, clubs en contracten. Registreer met je e-mail, log in en beheer eenvoudig je voetbaldata.
 
 ---
 
 ## ✨ Functies
 
-• Gebruikersaccounts: Registreer met email en wachtwoord
-
-• Spelers Management: Toevoegen, bewerken en verwijderen van voetbalspelers
-
-• Clubs Management: Beheer clubs met automatisch ingevulde standaard clubs
-
-• Contracten System: Koppel spelers aan clubs met positie en rugnummer
-
-• Geavanceerd Zoeken: Zoek spelers op naam en filter op nationaliteit
-
-• Dashboard: Overzicht van alle spelers, clubs en contracten
-
-• Admin Interface: Volledige beheerfunctionaliteit voor administrators
-
-• Beveiliging: Wachtwoorden gehasht met bcrypt, login-required bescherming
-
-• Responsief Design: Werkt op desktop, tablet en mobiel
+* Gebruikersaccounts: registreer met e-mail en wachtwoord
+* Spelersmanagement: toevoegen, bewerken en verwijderen van spelers
+* Clubsmanagement: beheer clubs met automatisch ingevulde standaardclubs
+* Contractensysteem: koppel spelers aan clubs met positie en rugnummer
+* Geavanceerd zoeken: zoek spelers op naam en filter op nationaliteit
+* Dashboard: overzicht van spelers, clubs en contracten
+* Admin interface: volledige beheerfunctionaliteit voor administrators
+* Beveiliging: wachtwoorden gehasht met bcrypt en login-protectie
+* Responsief design: werkt op desktop, tablet en mobiel
 
 ---
 
 ## 📋 Vereisten
 
-• Python 3.8 of hoger
-• pip (Python package manager)
+* Python 3.8 of hoger
+* pip (Python package manager)
 
 ---
 
 ## 🚀 Installatie
 
-### Stap 1: Clone of download het project
+### 1. Clone of download het project
 
-```
+```bash
 cd Voetbalbase
 ```
 
-### Stap 2: Maak een virtuele omgeving (aanbevolen)
+### 2. Maak een virtuele omgeving (aanbevolen)
 
-```
+```bash
 python -m venv venv
 ```
 
-### Stap 3: Activeer de virtuele omgeving
+### 3. Activeer de virtuele omgeving
 
-Op Windows:
-```
+**Windows**
+
+```bash
 venv\Scripts\activate
 ```
 
-Op macOS/Linux:
-```
+**macOS/Linux**
+
+```bash
 source venv/bin/activate
 ```
 
-### Stap 4: Installeer de vereiste packages
+### 4. Installeer de vereiste packages
 
-```
+```bash
 pip install -r requirements.txt
 ```
 
-### Stap 5: Voer de applicatie uit
+### 5. Start de applicatie
 
-```
+```bash
 python app.py
 ```
 
-De applicatie start nu op `http://127.0.0.1:5000`
-
-### Stap 6: Open in je browser
-
-Open je webbrowser en ga naar: [http://127.0.0.1:5000](http://127.0.0.1:5000/)
+De applicatie draait op: [http://127.0.0.1:5000](http://127.0.0.1:5000)
 
 ---
 
-## 🎮 Hoe Gebruik Je Het
+## 🎮 Gebruik
 
 ### Registratie & Login
 
-1. Nieuw account: Klik op "Registreer" en vul je email en wachtwoord in
-2. Login: Log in met je email en wachtwoord
-3. Dashboard: Je bent nu ingelogd en ziet het overzicht
+1. Klik op **Registreer** en maak een account
+2. Log in met je gegevens
+3. Je komt op het dashboard
 
-### Spelers Beheren
+### Spelers beheren
 
-1. Ga naar Spelers pagina
-2. Voeg speler toe: Klik op "+ Nieuwe speler" en vul de gegevens in
-3. Bewerk speler: Klik het potlood-icoon naast een speler
-4. Verwijder speler: Klik het prullenbak-icoon
-5. Zoek spelers: Gebruik de zoekbalk om spelers te filteren
+* Ga naar de spelerspagina
+* Voeg spelers toe via **+ Nieuwe speler**
+* Bewerken via het potlood-icoon
+* Verwijderen via het prullenbak-icoon
+* Gebruik de zoekbalk om te filteren
 
-### Clubs Beheren
+### Clubs beheren
 
-1. Ga naar Clubs pagina
-2. Voeg club toe: Klik op "+ Nieuwe club" en vul naam en land in
-3. Bewerk club: Klik het potlood-icoon
-4. Verwijder club: Klik het prullenbak-icoon
-5. Standaard clubs: 50+ standaard clubs zijn al vooraf ingeladen
+* Ga naar de clubspagina
+* Voeg clubs toe met naam en land
+* Bewerk of verwijder bestaande clubs
+* 50+ standaardclubs zijn vooraf geladen
 
-### Contracten Beheren
+### Contracten beheren
 
-1. Ga naar Contracten pagina
-2. Voeg contract toe: Selecteer een speler, club, positie en rugnummer
-3. Bewerk contract: Klik het potlood-icoon
-4. Verwijder contract: Klik het prullenbak-icoon
+* Ga naar contracten
+* Koppel speler aan club met positie en rugnummer
+* Bewerken/verwijderen via iconen
 
 ---
 
 ## ⚙️ Configuratie
 
-Standaardwaarden:
-
-• Database: SQLite (database.db)
-
-• Server poort: 5000
-
-• Debug modus: Aan (development)
-
-• Standaard clubs: 50+ Nederlandse clubs
+* Database: SQLite (`database.db`)
+* Serverpoort: 5000
+* Debugmodus: aan (development)
+* Standaardclubs: 50+ Nederlandse clubs
 
 ---
 
 ## 🛠️ Technologie Stack
 
-• Backend: Python / Flask
+* Backend: Python / Flask
+* Database: SQLite + SQLAlchemy
+* Frontend: Bootstrap 5 + Jinja2
+* Authenticatie: Flask-WTF + bcrypt
+* Migraties: Flask-Migrate
 
-• Database: SQLite + SQLAlchemy ORM
+### Dependencies
 
-• Frontend: Bootstrap 5 + Jinja2 Templates
-
-• Authenticatie: Flask-WTF + bcrypt
-
-• Database Migration: Flask-Migrate
-
-Dependencies:
-
-• Flask
-
-• Flask-SQLAlchemy
-
-• Flask-WTF
-
-• Flask-Migrate
-
-• bcrypt
-
-• WTForms
-
-• email-validator
+* Flask
+* Flask-SQLAlchemy
+* Flask-WTF
+* Flask-Migrate
+* bcrypt
+* WTForms
+* email-validator
 
 ---
 
 ## 🔒 Veiligheid
 
-• Wachtwoorden worden beveiligd opgeslagen (hashed met bcrypt)
-
-• Sessies zijn beveiligd met geheime sleutels
-
-• SQL injection bescherming via SQLAlchemy
-
-• CSRF bescherming ingebouwd
-
----
-
-## 📝 Licentie
-
-Dit project is gelicentieerd onder de MIT Licentie.
+* Wachtwoorden worden gehasht met bcrypt
+* Sessies beveiligd met geheime sleutels
+* SQL-injection bescherming via SQLAlchemy
+* CSRF-bescherming ingebouwd
 
 ---
 
 ## 📊 Database
 
-• SQLite (`database.db`)
-• Wordt automatisch aangemaakt
-• Seed met clubs bij eerste start
+* SQLite (`database.db`)
+* Wordt automatisch aangemaakt
+* Seed met clubs bij eerste start
 
 ---
 
-## Inloggegevens voor testen
+## 🔑 Testgegevens
 
-### Standaard Admin Account
+**Admin account**
 
-E-mail: `admin@voetbalbase.nl`
+* E-mail: `admin@voetbalbase.nl`
+* Wachtwoord: `Admin123!`
 
-Wachtwoord: `Admin123!`
-
-(Je mag natuurlijk ook je eigen account aanmaken)
-
----
-
-Veel plezier met het beheren van je voetbaldata! ⚽
-
-Laatst geupdate: April 2026
+Je kunt ook zelf een account aanmaken.
 
 ---
 
-## Structuur
+## 📁 Projectstructuur
 
+```
 VoetbalBase/
 │
 ├── app/
 │   ├── templates/
-
 │   │   ├── base.html
-
 │   │   ├── landing.html
-
 │   │   ├── login.html
-
 │   │   ├── register.html
-
 │   │   ├── admin_login.html
-
 │   │   ├── home.html
-
 │   │   ├── spelers.html
-
 │   │   ├── speler_detail.html
-
 │   │   ├── clubs.html
-
 │   │   ├── contracten.html
-
 │   │   ├── admin_dashboard.html
-
 │   │   ├── admin_users.html
-
 │   │   ├── admin_user_form.html
-
 │   │   ├── admin_spelers.html
-
 │   │   ├── admin_speler_form.html
-
 │   │   ├── admin_clubs.html
-
 │   │   ├── admin_club_form.html
-
 │   │   ├── admin_contracten.html
-
 │   │   └── admin_contract_form.html
-
-│
 │   ├── __init__.py
-
 │   ├── models.py
-
 │   ├── forms.py
-
 │   └── views.py
-
 │
 ├── app.py
-
 ├── config.py
-
 ├── database.db
-
 ├── requirements.txt
-
 └── README.md
+```
 
 ---
 
-## Licentie
+## 📝 Licentie
 
 MIT License
+
+---
+
+*Laatst geüpdatet: april 2026*
