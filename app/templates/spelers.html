@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Spelers | VoetbalBase{% endblock %}
+
+{% block content %}
+<div class="card table-card mb-4">
+    <h2 class="section-title">Spelers</h2>
+    <p class="section-subtitle mb-4">Zoek door alle beschikbare spelers.</p>
+
+    <form method="get" class="row g-3">
+        <div class="col-md-5">
+            <label class="form-label">Zoek op naam</label>
+            <input type="text" class="form-control" name="q" value="{{ zoekterm }}">
+        </div>
+        <div class="col-md-5">
+            <label class="form-label">Nationaliteit</label>
+            <input type="text" class="form-control" name="nationaliteit" value="{{ nationaliteit }}">
+        </div>
+        <div class="col-md-2 d-flex align-items-end">
+            <button class="btn btn-success w-100" type="submit">Zoeken</button>
+        </div>
+    </form>
+</div>
+
+{% if spelers %}
+<div class="card table-card">
+    <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+            <thead>
+                <tr>
+                    <th>Naam</th>
+                    <th>Leeftijd</th>
+                    <th>Nationaliteit</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for speler in spelers %}
+                <tr>
+                    <td>{{ speler.naam }}</td>
+                    <td>{{ speler.leeftijd }}</td>
+                    <td>{{ speler.nationaliteit }}</td>
+                    <td class="text-end">
+                        <a class="btn btn-sm btn-primary" href="{{ url_for('main.speler_detail', speler_id=speler.id) }}">Bekijken</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% else %}
+<div class="empty-state">
+    <h4>Geen spelers gevonden</h4>
+    <p class="text-muted mb-0">Probeer een andere zoekopdracht.</p>
+</div>
+{% endif %}
+{% endblock %}

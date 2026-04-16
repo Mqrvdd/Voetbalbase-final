@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Admin dashboard | VoetbalBase{% endblock %}
+
+{% block content %}
+<div class="card hero-card mb-4">
+    <h1 class="hero-title mb-3">Admin dashboard</h1>
+    <p class="hero-text">Beheer hier gebruikers, spelers, clubs en contracten.</p>
+
+    <div class="d-flex flex-wrap gap-3 mt-4">
+        <div class="stat-box">
+            <strong>{{ aantal_users }}</strong>
+            <span>Gebruikers</span>
+        </div>
+        <div class="stat-box">
+            <strong>{{ aantal_spelers }}</strong>
+            <span>Spelers</span>
+        </div>
+        <div class="stat-box">
+            <strong>{{ aantal_clubs }}</strong>
+            <span>Clubs</span>
+        </div>
+        <div class="stat-box">
+            <strong>{{ aantal_contracten }}</strong>
+            <span>Contracten</span>
+        </div>
+    </div>
+</div>
+
+<div class="top-actions">
+    <a class="btn btn-success" href="{{ url_for('main.admin_users') }}">Gebruikers beheren</a>
+    <a class="btn btn-success" href="{{ url_for('main.admin_spelers') }}">Spelers beheren</a>
+    <a class="btn btn-success" href="{{ url_for('main.admin_clubs') }}">Clubs beheren</a>
+    <a class="btn btn-success" href="{{ url_for('main.admin_contracten') }}">Contracten beheren</a>
+</div>
+{% endblock %}

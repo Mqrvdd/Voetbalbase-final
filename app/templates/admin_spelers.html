@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}Spelers beheren | VoetbalBase{% endblock %}
+
+{% block content %}
+<div class="top-actions">
+    <a class="btn btn-success" href="{{ url_for('main.admin_speler_nieuw') }}">Nieuwe speler</a>
+</div>
+
+<div class="card table-card mb-4">
+    <h2 class="section-title">Spelers beheren</h2>
+
+    <form method="get" class="row g-3">
+        <div class="col-md-5">
+            <label class="form-label">Zoek op naam</label>
+            <input type="text" class="form-control" name="q" value="{{ zoekterm }}">
+        </div>
+        <div class="col-md-5">
+            <label class="form-label">Nationaliteit</label>
+            <input type="text" class="form-control" name="nationaliteit" value="{{ nationaliteit }}">
+        </div>
+        <div class="col-md-2 d-flex align-items-end">
+            <button class="btn btn-success w-100" type="submit">Zoeken</button>
+        </div>
+    </form>
+</div>
+
+{% if spelers %}
+<div class="card table-card">
+    <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+            <thead>
+                <tr>
+                    <th>Naam</th>
+                    <th>Leeftijd</th>
+                    <th>Nationaliteit</th>
+                    <th class="text-end">Acties</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for speler in spelers %}
+                <tr>
+                    <td>{{ speler.naam }}</td>
+                    <td>{{ speler.leeftijd }}</td>
+                    <td>{{ speler.nationaliteit }}</td>
+                    <td class="actions-cell text-end">
+                        <a class="btn btn-sm btn-primary" href="{{ url_for('main.admin_speler_bewerken', speler_id=speler.id) }}">Bewerken</a>
+                        <form class="d-inline" method="post" action="{{ url_for('main.admin_speler_verwijderen', speler_id=speler.id) }}">
+                            <button class="btn btn-sm btn-danger" type="submit">Verwijderen</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% else %}
+<div class="empty-state">
+    <h4>Geen spelers gevonden</h4>
+    <p class="text-muted mb-0">Probeer een andere zoekopdracht.</p>
+</div>
+{% endif %}
+{% endblock %}

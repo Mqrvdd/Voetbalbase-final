@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}{{ speler.naam }} | VoetbalBase{% endblock %}
+
+{% block content %}
+<div class="card p-4 mb-4">
+    <h2 class="section-title">{{ speler.naam }}</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <p><strong>Leeftijd:</strong> {{ speler.leeftijd }}</p>
+            <p><strong>Nationaliteit:</strong> {{ speler.nationaliteit }}</p>
+        </div>
+    </div>
+</div>
+
+<div class="card table-card">
+    <h3 class="section-title">Contracten</h3>
+
+    {% if speler.contracten %}
+    <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+            <thead>
+                <tr>
+                    <th>Club</th>
+                    <th>Positie</th>
+                    <th>Rugnummer</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for contract in speler.contracten %}
+                <tr>
+                    <td>{{ contract.club.naam }}</td>
+                    <td>{{ contract.positie }}</td>
+                    <td>{{ contract.rugnummer }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <p class="text-muted mb-0">Geen contracten gevonden.</p>
+    {% endif %}
+</div>
+{% endblock %}

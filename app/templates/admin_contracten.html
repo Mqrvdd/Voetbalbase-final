@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Contracten beheren | VoetbalBase{% endblock %}
+
+{% block content %}
+<div class="top-actions">
+    <a class="btn btn-success" href="{{ url_for('main.admin_contract_nieuw') }}">Nieuw contract</a>
+</div>
+
+<div class="card table-card">
+    <h2 class="section-title">Contracten beheren</h2>
+
+    {% if contracten %}
+    <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+            <thead>
+                <tr>
+                    <th>Speler</th>
+                    <th>Club</th>
+                    <th>Positie</th>
+                    <th>Rugnummer</th>
+                    <th class="text-end">Acties</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for contract in contracten %}
+                <tr>
+                    <td>{{ contract.speler.naam }}</td>
+                    <td>{{ contract.club.naam }}</td>
+                    <td>{{ contract.positie }}</td>
+                    <td>{{ contract.rugnummer }}</td>
+                    <td class="actions-cell text-end">
+                        <a class="btn btn-sm btn-primary" href="{{ url_for('main.admin_contract_bewerken', contract_id=contract.id) }}">Bewerken</a>
+                        <form class="d-inline" method="post" action="{{ url_for('main.admin_contract_verwijderen', contract_id=contract.id) }}">
+                            <button class="btn btn-sm btn-danger" type="submit">Verwijderen</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <p class="text-muted mb-0">Geen contracten gevonden.</p>
+    {% endif %}
+</div>
+{% endblock %}

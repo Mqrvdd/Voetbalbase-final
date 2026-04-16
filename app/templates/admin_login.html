@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Admin login | VoetbalBase{% endblock %}
+
+{% block content %}
+<div class="card form-card">
+    <h2 class="section-title">Admin login</h2>
+    <p class="section-subtitle mb-4">Alleen voor beheerders.</p>
+
+    <form method="post">
+        {{ form.hidden_tag() }}
+
+        <div class="mb-3">
+            <label class="form-label">{{ form.email.label.text }}</label>
+            {{ form.email(class="form-control") }}
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">{{ form.password.label.text }}</label>
+            {{ form.password(class="form-control") }}
+        </div>
+
+        <div class="d-grid">
+            {{ form.submit(class="btn btn-success") }}
+        </div>
+    </form>
+</div>
+{% endblock %}

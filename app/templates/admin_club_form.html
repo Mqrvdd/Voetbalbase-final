@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}{{ titel }} | VoetbalBase{% endblock %}
+
+{% block content %}
+<div class="card form-card">
+    <h2 class="section-title">{{ titel }}</h2>
+
+    <form method="post">
+        {{ form.hidden_tag() }}
+
+        <div class="mb-3">
+            <label class="form-label">{{ form.naam.label.text }}</label>
+            {{ form.naam(class="form-control") }}
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">{{ form.land.label.text }}</label>
+            {{ form.land(class="form-control") }}
+        </div>
+
+        <div class="d-grid">
+            {{ form.submit(class="btn btn-success") }}
+        </div>
+    </form>
+</div>
+{% endblock %}
