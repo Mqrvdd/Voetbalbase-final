@@ -117,8 +117,11 @@ Open je webbrowser en ga naar: [http://127.0.0.1:5000](http://127.0.0.1:5000/)
 Standaardwaarden:
 
 • Database: SQLite (database.db)
+
 • Server poort: 5000
+
 • Debug modus: Aan (development)
+
 • Standaard clubs: 50+ Nederlandse clubs
 
 ---
@@ -126,19 +129,29 @@ Standaardwaarden:
 ## 🛠️ Technologie Stack
 
 • Backend: Python / Flask
+
 • Database: SQLite + SQLAlchemy ORM
+
 • Frontend: Bootstrap 5 + Jinja2 Templates
+
 • Authenticatie: Flask-WTF + bcrypt
+
 • Database Migration: Flask-Migrate
 
 Dependencies:
 
 • Flask
+
 • Flask-SQLAlchemy
+
 • Flask-WTF
+
 • Flask-Migrate
+
 • bcrypt
+
 • WTForms
+
 • email-validator
 
 ---
@@ -146,8 +159,11 @@ Dependencies:
 ## 🔒 Veiligheid
 
 • Wachtwoorden worden beveiligd opgeslagen (hashed met bcrypt)
+
 • Sessies zijn beveiligd met geheime sleutels
+
 • SQL injection bescherming via SQLAlchemy
+
 • CSRF bescherming ingebouwd
 
 ---
@@ -190,35 +206,63 @@ VoetbalBase/
 │
 ├── app/
 │   ├── templates/
+
 │   │   ├── base.html
+
 │   │   ├── landing.html
+
 │   │   ├── login.html
+
 │   │   ├── register.html
+
 │   │   ├── admin_login.html
+
 │   │   ├── home.html
+
 │   │   ├── spelers.html
+
 │   │   ├── speler_detail.html
+
 │   │   ├── clubs.html
+
 │   │   ├── contracten.html
+
 │   │   ├── admin_dashboard.html
+
 │   │   ├── admin_users.html
+
 │   │   ├── admin_user_form.html
+
 │   │   ├── admin_spelers.html
+
 │   │   ├── admin_speler_form.html
+
 │   │   ├── admin_clubs.html
+
 │   │   ├── admin_club_form.html
+
 │   │   ├── admin_contracten.html
+
 │   │   └── admin_contract_form.html
+
 │
 │   ├── __init__.py
+
 │   ├── models.py
+
 │   ├── forms.py
+
 │   └── views.py
+
 │
 ├── app.py
+
 ├── config.py
+
 ├── database.db
+
 ├── requirements.txt
+
 └── README.md
 
 ---
