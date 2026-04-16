@@ -7,13 +7,21 @@ Een voetbalbase voor beheer van spelers, clubs en contracten. Registreer met je 
 ## ✨ Functies
 
 • Gebruikersaccounts: Registreer met email en wachtwoord
+
 • Spelers Management: Toevoegen, bewerken en verwijderen van voetbalspelers
+
 • Clubs Management: Beheer clubs met automatisch ingevulde standaard clubs
+
 • Contracten System: Koppel spelers aan clubs met positie en rugnummer
+
 • Geavanceerd Zoeken: Zoek spelers op naam en filter op nationaliteit
+
 • Dashboard: Overzicht van alle spelers, clubs en contracten
+
 • Admin Interface: Volledige beheerfunctionaliteit voor administrators
+
 • Beveiliging: Wachtwoorden gehasht met bcrypt, login-required bescherming
+
 • Responsief Design: Werkt op desktop, tablet en mobiel
 
 ---
